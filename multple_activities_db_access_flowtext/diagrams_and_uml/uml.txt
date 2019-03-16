@@ -1,0 +1,111 @@
+@startuml
+
+title Lab2 class diagram
+
+
+class AppCompatActivity
+{
+}
+
+class LoginActivity {
+  .. Member variables ..
+  -{static} EditText username;
+  -{static} EditText password;
+  -{static} Button login_button;
+  .. Methods ..
+  #protected void onCreate-overrides AppCompatActivity
+  -void SetupActivity()
+}
+
+class MainActivity {
+  .. Member variables ..
+  -ListView listView;
+  -PostListAdapter listAdapter
+  -String user
+  .. Methods ..
+  #protected void onCreate()
+  #protected boolean onCreateOptionsMenu()
+  #protected boolean onOptionsItemSelected
+}
+
+class PostListAdapter {
+  .. Member variables ..
+  -Activity activity;
+  -List<Post> postList;
+  -LayoutInflater inflater;
+  -PostListDb postListDb
+  .. Methods ..
+  #protected void PostListAdapter(Activity activity)
+  +public int getCount()
+  +public Object getItem(int location)
+  +public long getItemId(int position)
+  +public View getView(int position, View convertView, ViewGroup parent)
+}
+
+class Post {
+  .. Member variables ..
+    -int id;
+    -String name;
+    -String post;
+    -String image;
+    -String timestamp;
+  .. Methods ..
+  public Post();
+  public Post(int id, String name, String image, String post,
+                String timeStamp);
+  public int getId();
+  public void setId(int id);
+  public String getName();
+  public void setName(String name);
+  public String getImge();
+  public void setImge(String image);
+  public String getPost();
+  public void setPost(String post);
+  public String getTimeStamp();
+  public void setTimeStamp(String timeStamp); 
+}
+
+class PostListDb
+{
+  .. Member variables ..
+-DataBaseManager databaseManager;
+-int postDb;
+-Activity activity;
+  .. Methods ..
++public void initPostsDB();
++public void insertPostToDb(Post post);
++public List<Post> retrievePostsFromDb();
+}
+
+class DataBaseManager
+{
+.. Member variables ..
+private HashMap<Integer, SQLiteDatabase> hmap;
+private int numDbOpens;
+  .. Methods ..
+ +DatabaseManager();
+ + int DbMgr_openOrCreateDb(Activity activity, String dbName, int mode);
+ +void DbMgr_execSQL(int handle, String command);
+ +Cursor DbMgr_rawQuery(int handle, String query);
+}
+
+class SettingsActivity
+{
+-AppCompatDelegate mDelegate;
+#void onCreate(Bundle savedInstanceState);
++void onBuildHeaders(List<PreferenceActivity.Header> target);
+-{static} classGeneralPreferenceFragment
+-{static} NotificationPreferenceFragment
+-{static} DataSyncPreferenceFragment
+
+}
+AppCompatActivity <|-down- LoginActivity: Inheritance
+AppCompatActivity <|-down- MainActivity: Inheritance
+SettingsActivity <|-down- PreferenceActivity: Inheritance
+
+MainActivity "1" *-down- PostListAdapter: Composition
+PostListAdapter "1" *-down- "many" Post: Composition
+PostListAdapter "1" *-down- "one" PostListDb: Composition
+PostListDb "1" *-down- "one" DataBaseManager: Composition
+
+@enduml
