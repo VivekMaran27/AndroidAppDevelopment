@@ -1,0 +1,26 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
+    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:key="full_name"
+        android:title="Name"
+        android:summary="Enter Your Complete Name"
+        android:dialogTitle="Your Name"
+        android:dialogMessage="Enter Your Complete Name"
+        android:defaultValue=""
+        android:inputType="textCapWords"/>
+
+    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
+         dismiss it. -->
+    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
+    <EditTextPreference
+        android:key="email_address"
+        android:title="Email Address"
+        android:summary="Enter Your Email Address"
+        android:dialogTitle="Enter Your Email Address"
+        android:dialogMessage="Enter Your Email Address"
+        android:defaultValue=""
+        android:inputType="textEmailAddress"/>
+
+</PreferenceScreen>
