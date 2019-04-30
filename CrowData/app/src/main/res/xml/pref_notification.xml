@@ -1,0 +1,16 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <SwitchPreference
+        android:defaultValue="true"
+        android:key="notifications_new_message"
+        android:title="@string/pref_title_new_message_notifications" />
+
+    <RingtonePreference
+        android:key="notification_ringtone"
+        android:title="Notification Ringtone"
+        android:summary="Customise Notification Ringtone for you"
+        android:dialogTitle="Notification Ringtone"
+        android:dialogMessage="Customise Notification Ringtone for you"
+        android:dependency="notifications_new_message"/>
+
+</PreferenceScreen>

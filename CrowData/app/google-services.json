@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "742199553209",
+    "firebase_url": "https://crowdata-74bbe.firebaseio.com",
+    "project_id": "crowdata-74bbe",
+    "storage_bucket": "crowdata-74bbe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742199553209:android:fef48be80dd1d2c4",
+        "android_client_info": {
+          "package_name": "com.cmpe277.lab2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742199553209-8jka9d93jk07ie8a8jdtioqmcojqf5r4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cmpe277.lab2",
+            "certificate_hash": "fa57b62eec0f4b820dfe770af8c25e32d350c326"
+          }
+        },
+        {
+          "client_id": "742199553209-eui6tp670qh60f6195mcktb8o19lboak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHkUcaBjGCq3y3GLmb6Q7mJqLX8GcsA4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742199553209-eui6tp670qh60f6195mcktb8o19lboak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
